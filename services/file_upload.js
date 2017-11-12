@@ -24,14 +24,15 @@ function handle_request(msg, callback){
                     filePath: msg.filePath,
                     lastModified: msg.lastModified,
                     isAdmin: msg.isAdmin,
-                    isStarred: msg.isStarred,
+                    isStared: msg.isStared,
                     isShared: msg.isShared,
                     isSelected: msg.isSelected
                 };
 
+            console.log('{emailID:'+msg.emailID+'}, {$push: {files:'+JSON.stringify(uploadQuery)+'}}, {upsert:true}');
             coll.update( {emailID:msg.emailID}, {$push: {files:uploadQuery}}, {upsert:true} , function(err, user) {
                 if (user) {
-                    console.log(user);
+                    console.log(uploadQuery);
                     res.code = "200";
                     res.value = "File Successfully Uploaded";
                     console.log('My response',res);

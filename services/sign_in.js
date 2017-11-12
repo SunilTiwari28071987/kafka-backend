@@ -10,6 +10,7 @@ function handle_request(msg, callback){
 
     var res = {};
     var resultJson = {};
+
     console.log("In handle request:"+ JSON.stringify(msg));
 
     validator.isAuthenticUser(function(userStatus) {
