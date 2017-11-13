@@ -20,6 +20,7 @@ function isExistingUser(callbackFunction,emailID) {
                 });
             });
 
+
 }
 
 
@@ -45,7 +46,6 @@ function isAuthenticUser(callbackFunction,emailID,password) {
 
 
 }
-
 
 exports.isExistingUser = isExistingUser;
 exports.isAuthenticUser = isAuthenticUser;
